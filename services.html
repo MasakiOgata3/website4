@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>サービス詳細 - 尾形社会保険労務士事務所</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af",
+              secondary: "#3b82f6",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+      content: "\f3c2";
+      }
+      .nav-fixed {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+      }
+      .tab-scroll {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      }
+      .tab-scroll::-webkit-scrollbar {
+      display: none;
+      }
+      .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      }
+      .accordion-content.active {
+      max-height: 500px;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div class="px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"
+            >
+              <i class="ri-building-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-gray-900">
+                尾形社会保険労務士事務所
+              </h1>
+              <p class="text-sm text-gray-600">サービス詳細</p>
+            </div>
+          </div>
+          <nav class="hidden lg:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >ホーム</a
+            >
+            <a href="#services" class="text-primary font-semibold">サービス</a>
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >お問い合わせ</a
+            >
+          </nav>
+          <div class="flex items-center space-x-4">
+            <div class="hidden md:flex items-center space-x-2 text-primary">
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-phone-line"></i>
+              </div>
+              <span class="font-semibold">03-6824-6886</span>
+            </div>
+            <a
+              href="index.html"
+            >
+              <button
+                class="border-2 border-primary text-primary px-6 py-2 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
+              >
+                ホームに戻る
+              </button>
+            </a>
+          </div>
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden w-8 h-8 flex items-center justify-center"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="lg:hidden hidden bg-white border-t">
+        <nav class="px-6 py-4 space-y-4">
+          <a
+            href="index.html"
+            class="block text-gray-700 hover:text-primary transition-colors"
+            >ホーム</a
+          >
+          <a href="#services" class="block text-primary font-semibold"
+            >サービス</a
+          >
+          <a
+            href="#contact"
+            class="block text-gray-700 hover:text-primary transition-colors"
+            >お問い合わせ</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-24">
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">サービス詳細</h1>
+            <p class="text-xl text-gray-600">
+              各サービスの詳細な内容と料金をご確認いただけます
+            </p>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="tab-scroll flex overflow-x-auto border-b">
+              <button
+                class="service-tab flex-shrink-0 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 border-primary text-primary bg-blue-50"
+                data-service="insurance"
+              >
+                労働保険・社会保険
+              </button>
+              <button
+                class="service-tab flex-shrink-0 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-primary"
+                data-service="payroll"
+              >
+                給与計算
+              </button>
+              <button
+                class="service-tab flex-shrink-0 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-primary"
+                data-service="rules"
+              >
+                就業規則作成
+              </button>
+              <button
+                class="service-tab flex-shrink-0 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-primary"
+                data-service="consultation"
+              >
+                人事労務相談
+              </button>
+              <button
+                class="service-tab flex-shrink-0 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-primary"
+                data-service="contract"
+              >
+                労働契約書作成
+              </button>
+              <button
+                class="service-tab flex-shrink-0 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-primary"
+                data-service="training"
+              >
+                労務管理研修
+              </button>
+            </div>
+
+            <div id="insurance" class="service-content p-8">
+              <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20social%20insurance%20documents%20and%20forms%20on%20modern%20office%20desk%2C%20labor%20insurance%20paperwork%2C%20health%20insurance%20cards%2C%20clean%20white%20background%2C%20organized%20business%20environment%2C%20high%20quality%20photography&width=600&height=400&seq=insurance001&orientation=landscape"
+                    alt="労働保険・社会保険"
+                    class="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  />
+                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    労働保険・社会保険
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">
+                    労災保険、雇用保険、健康保険、厚生年金保険の加入手続きから給付申請まで、複雑な社会保険業務を専門家が代行いたします。法改正にも迅速に対応し、企業のコンプライアンス維持をサポートします。
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    具体的な手続き内容
+                  </h3>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">新規適用届の作成・提出</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >被保険者資格取得・喪失届の手続き</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >算定基礎届・月額変更届の作成</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >労災給付・雇用保険給付の申請代行</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >年度更新・労働保険料の申告</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">社会保険調査対応</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-12 mt-12">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">料金表</h3>
+                  <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th class="px-4 py-3 text-left">サービス内容</th>
+                          <th class="px-4 py-3 text-right">料金</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            新規適用手続き
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥50,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            資格取得・喪失手続き（1名）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥3,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            算定基礎届（月額顧問契約時）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥20,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            年度更新手続き
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥30,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">給付申請代行</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥15,000〜
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">必要書類</h3>
+                  <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        新規適用時
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 法人登記簿謄本（履歴事項全部証明書）</li>
+                        <li>• 労働者名簿</li>
+                        <li>• 賃金台帳</li>
+                        <li>• 出勤簿またはタイムカード</li>
+                        <li>• 雇用契約書</li>
+                      </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        資格取得時
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 雇用契約書</li>
+                        <li>• 住民票（被扶養者がいる場合）</li>
+                        <li>• 年金手帳</li>
+                        <li>• 前職の離職票（中途採用の場合）</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">
+                      対応期間の目安
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      新規適用：2-3週間 / 各種手続き：3-5営業日
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-12">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">
+                  よくある質問
+                </h3>
+                <div class="space-y-4">
+                  <div class="border border-gray-200 rounded-lg">
+                    <button
+                      class="accordion-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50"
+                      data-target="faq1"
+                    >
+                      <span class="font-semibold text-gray-900"
+                        >社会保険の加入義務はありますか？</span
+                      >
+                      <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-add-line accordion-icon"></i>
+                      </div>
+                    </button>
+                    <div id="faq1" class="accordion-content px-6 pb-4">
+                      <p class="text-gray-600">
+                        法人の場合は従業員数に関係なく加入義務があります。個人事業主の場合は従業員5名以上で加入義務が発生します。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg">
+                    <button
+                      class="accordion-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50"
+                      data-target="faq2"
+                    >
+                      <span class="font-semibold text-gray-900"
+                        >手続きにはどのくらい時間がかかりますか？</span
+                      >
+                      <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-add-line accordion-icon"></i>
+                      </div>
+                    </button>
+                    <div id="faq2" class="accordion-content px-6 pb-4">
+                      <p class="text-gray-600">
+                        新規適用の場合は書類準備から完了まで約2-3週間、通常の資格取得・喪失手続きは3-5営業日程度です。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg">
+                    <button
+                      class="accordion-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50"
+                      data-target="faq3"
+                    >
+                      <span class="font-semibold text-gray-900"
+                        >保険料はいつから発生しますか？</span
+                      >
+                      <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-add-line accordion-icon"></i>
+                      </div>
+                    </button>
+                    <div id="faq3" class="accordion-content px-6 pb-4">
+                      <p class="text-gray-600">
+                        社会保険料は資格取得日の属する月から発生します。月の途中で入社した場合でも、その月の保険料が満額発生します。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="payroll" class="service-content p-8 hidden">
+              <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <img
+                    src="https://readdy.ai/api/search-image?query=modern%20payroll%20calculation%20workspace%20with%20calculator%20computer%20and%20salary%20documents%2C%20professional%20accounting%20office%20environment%2C%20clean%20organized%20desk%2C%20financial%20paperwork%2C%20high%20quality%20photography&width=600&height=400&seq=payroll001&orientation=landscape"
+                    alt="給与計算"
+                    class="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  />
+                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    給与計算
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">
+                    複雑な給与計算業務を正確かつ迅速に処理いたします。社会保険料、雇用保険料、所得税、住民税の計算から給与明細書の作成まで、給与に関するすべての業務をお任せください。
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    具体的な手続き内容
+                  </h3>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">月次給与計算・賞与計算</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >給与明細書・賞与明細書作成</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >社会保険料・雇用保険料計算</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">所得税・住民税計算</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">年末調整業務</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">給与支払報告書作成</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-12 mt-12">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">料金表</h3>
+                  <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th class="px-4 py-3 text-left">従業員数</th>
+                          <th class="px-4 py-3 text-right">月額料金</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">1-10名</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥20,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">11-20名</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥30,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">21-30名</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥40,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">31-50名</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥60,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            年末調整（1名）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥2,000
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">必要書類</h3>
+                  <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        毎月必要な書類
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 出勤簿またはタイムカード</li>
+                        <li>• 残業時間集計表</li>
+                        <li>• 有給休暇取得記録</li>
+                        <li>• 各種手当支給データ</li>
+                        <li>• 社会保険料控除データ</li>
+                      </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        年末調整時
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 扶養控除等申告書</li>
+                        <li>• 保険料控除申告書</li>
+                        <li>• 住宅借入金等特別控除申告書</li>
+                        <li>• 各種控除証明書</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">
+                      対応期間の目安
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      月次給与計算：5営業日 / 年末調整：2-3週間
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-12">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">
+                  よくある質問
+                </h3>
+                <div class="space-y-4">
+                  <div class="border border-gray-200 rounded-lg">
+                    <button
+                      class="accordion-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50"
+                      data-target="payroll-faq1"
+                    >
+                      <span class="font-semibold text-gray-900"
+                        >給与計算の締め日はいつまでに連絡すればよいですか？</span
+                      >
+                      <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-add-line accordion-icon"></i>
+                      </div>
+                    </button>
+                    <div id="payroll-faq1" class="accordion-content px-6 pb-4">
+                      <p class="text-gray-600">
+                        月末締めの場合、翌月5日までに勤怠データをお送りください。給与支払日の3営業日前には明細書をお渡しします。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg">
+                    <button
+                      class="accordion-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50"
+                      data-target="payroll-faq2"
+                    >
+                      <span class="font-semibold text-gray-900"
+                        >給与計算ソフトは何を使用していますか？</span
+                      >
+                      <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-add-line accordion-icon"></i>
+                      </div>
+                    </button>
+                    <div id="payroll-faq2" class="accordion-content px-6 pb-4">
+                      <p class="text-gray-600">
+                        法改正に対応した最新の給与計算ソフトを使用しており、正確性と効率性を両立しています。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="rules" class="service-content p-8 hidden">
+              <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20employment%20rules%20and%20regulations%20documents%20on%20modern%20office%20desk%2C%20legal%20paperwork%20and%20contracts%2C%20business%20law%20books%2C%20clean%20organized%20workspace%2C%20high%20quality%20photography&width=600&height=400&seq=rules001&orientation=landscape"
+                    alt="就業規則作成"
+                    class="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  />
+                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    就業規則作成・改定
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">
+                    企業の実情に合わせた就業規則の作成・改定を行います。労働基準法をはじめとする関係法令に準拠し、労使トラブルの防止に効果的な規則を策定いたします。
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    具体的な手続き内容
+                  </h3>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">現行規則の診断・分析</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >企業実情に応じた規則案作成</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >労働者代表との意見聴取手続き</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">労働基準監督署への届出</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">従業員への周知・説明</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">定期的な見直し・改定</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-12 mt-12">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">料金表</h3>
+                  <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th class="px-4 py-3 text-left">サービス内容</th>
+                          <th class="px-4 py-3 text-right">料金</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            新規作成（従業員30名まで）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥150,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            新規作成（従業員31-100名）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥200,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">部分改定</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥50,000〜
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">全面改定</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥100,000〜
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            年次見直し（顧問契約時）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            無料
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">必要書類</h3>
+                  <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        新規作成時
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 会社概要・組織図</li>
+                        <li>• 現行の就業規則（ある場合）</li>
+                        <li>• 労働条件通知書のサンプル</li>
+                        <li>• 給与規程・退職金規程</li>
+                        <li>• 人事制度の概要</li>
+                      </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">改定時</h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 現行の就業規則</li>
+                        <li>• 改定したい箇所の詳細</li>
+                        <li>• 改定理由・背景</li>
+                        <li>• 関連する社内規程</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">
+                      対応期間の目安
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      新規作成：1-2ヶ月 / 部分改定：2-3週間
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="consultation" class="service-content p-8 hidden">
+              <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20HR%20consultation%20meeting%20in%20modern%20office%2C%20business%20advisor%20discussing%20with%20client%2C%20labor%20relations%20consulting%2C%20clean%20conference%20room%20setting%2C%20high%20quality%20photography&width=600&height=400&seq=consultation001&orientation=landscape"
+                    alt="人事労務相談"
+                    class="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  />
+                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    人事労務相談
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">
+                    労働問題、人事制度設計、労働時間管理など、人事労務に関するあらゆる相談にお応えします。経験豊富な社会保険労務士が、企業の課題解決をサポートいたします。
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    相談内容例
+                  </h3>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >労働時間・休日・休暇の管理</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >懲戒処分・解雇に関する相談</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">ハラスメント対策・防止</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >人事制度・評価制度の設計</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">労働基準監督署対応</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >労使トラブルの予防・解決</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-12 mt-12">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">料金表</h3>
+                  <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th class="px-4 py-3 text-left">相談方法</th>
+                          <th class="px-4 py-3 text-right">料金</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            電話相談（30分）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥5,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            面談相談（1時間）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥10,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">書面回答</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥15,000〜
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            緊急対応（時間外）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥20,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            月額顧問契約時
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            無制限
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">
+                    相談の流れ
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="flex items-start">
+                      <div
+                        class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1 text-sm font-bold"
+                      >
+                        1
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-900 mb-1">
+                          お問い合わせ
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                          電話またはメールでご相談内容をお聞かせください
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <div
+                        class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1 text-sm font-bold"
+                      >
+                        2
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-900 mb-1">
+                          相談方法の決定
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                          内容に応じて最適な相談方法をご提案します
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <div
+                        class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1 text-sm font-bold"
+                      >
+                        3
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-900 mb-1">
+                          相談実施
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                          専門的な観点から具体的な解決策をご提案します
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <div
+                        class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1 text-sm font-bold"
+                      >
+                        4
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-900 mb-1">
+                          フォローアップ
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                          必要に応じて継続的なサポートを提供します
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">
+                      対応期間の目安
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      緊急案件：当日対応 / 通常案件：2-3営業日
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="contract" class="service-content p-8 hidden">
+              <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20employment%20contract%20signing%20ceremony%20in%20modern%20office%2C%20business%20handshake%20over%20legal%20documents%2C%20new%20employee%20onboarding%2C%20clean%20corporate%20environment%2C%20high%20quality%20photography&width=600&height=400&seq=contract001&orientation=landscape"
+                    alt="労働契約書作成"
+                    class="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  />
+                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    労働契約書作成
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">
+                    法的要件を満たした労働契約書の作成を行います。雇用形態に応じて適切な契約書を作成し、労使トラブルを未然に防ぎます。労働条件の明示義務に確実に対応いたします。
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    作成する契約書の種類
+                  </h3>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">正社員労働契約書</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">有期雇用契約書</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700"
+                        >パート・アルバイト契約書</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">派遣労働者契約書</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">業務委託契約書</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">秘密保持契約書</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-12 mt-12">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">料金表</h3>
+                  <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th class="px-4 py-3 text-left">契約書の種類</th>
+                          <th class="px-4 py-3 text-right">料金</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            正社員労働契約書
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥30,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            有期雇用契約書
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥25,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            パート・アルバイト契約書
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥20,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            業務委託契約書
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥40,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            契約書ひな形作成
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥50,000
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">
+                    契約書に記載する主な項目
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        必須記載事項
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 労働契約の期間</li>
+                        <li>• 就業場所・従事業務</li>
+                        <li>• 始業・終業時刻、休憩時間</li>
+                        <li>• 休日・休暇</li>
+                        <li>• 賃金の決定・計算・支払方法</li>
+                        <li>• 退職に関する事項</li>
+                      </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        その他の重要事項
+                      </h4>
+                      <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 試用期間</li>
+                        <li>• 昇給・賞与</li>
+                        <li>• 服務規律</li>
+                        <li>• 秘密保持義務</li>
+                        <li>• 競業避止義務</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">
+                      対応期間の目安
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      新規作成：1週間 / 既存契約書の修正：3営業日
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="training" class="service-content p-8 hidden">
+              <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20corporate%20training%20seminar%20in%20modern%20conference%20room%2C%20business%20education%20workshop%2C%20HR%20management%20training%20session%2C%20clean%20professional%20environment%2C%20high%20quality%20photography&width=600&height=400&seq=training001&orientation=landscape"
+                    alt="労務管理研修"
+                    class="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  />
+                  <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    労務管理研修
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">
+                    管理職向けの労務管理研修を実施いたします。労働法の基礎知識から実践的な管理手法まで、体系的に学べるプログラムをご提供し、適切な労務管理の実現をサポートします。
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    研修プログラム
+                  </h3>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">労働法の基礎知識</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">労働時間管理の実務</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">ハラスメント防止対策</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">メンタルヘルス対策</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">人事評価・面談技法</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"
+                      ></div>
+                      <span class="text-gray-700">労使トラブル対応</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-12 mt-12">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">料金表</h3>
+                  <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th class="px-4 py-3 text-left">研修形式</th>
+                          <th class="px-4 py-3 text-right">料金</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            基礎研修（2時間）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥80,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            実践研修（4時間）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥150,000
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">
+                            1日集中研修（6時間）
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            ¥200,000
+                          </td>
+                        </tr>
+                        <tr class="bg-white">
+                          <td class="px-4 py-3 text-gray-700">
+                            オンライン研修
+                          </td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            対面の70%
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-gray-700">カスタム研修</td>
+                          <td class="px-4 py-3 text-right font-semibold">
+                            別途見積
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">
+                    研修の特徴
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        実践的な内容
+                      </h4>
+                      <p class="text-sm text-gray-700">
+                        実際の事例を基にした演習やロールプレイを通じて、実務に直結するスキルを習得できます。
+                      </p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        カスタマイズ対応
+                      </h4>
+                      <p class="text-sm text-gray-700">
+                        企業の業種・規模・課題に応じて、研修内容をカスタマイズいたします。
+                      </p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-900 mb-2">
+                        継続サポート
+                      </h4>
+                      <p class="text-sm text-gray-700">
+                        研修後も質問対応や追加資料提供など、継続的なサポートを行います。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">
+                      実施までの期間
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                      企画から実施まで：2-3週間
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+              お問い合わせ・ご相談
+            </h2>
+            <p class="text-xl text-gray-600">
+              各サービスに関するご質問やお見積もりのご依頼はこちらから
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+              <div class="bg-white p-8 rounded-xl shadow-sm">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                  お電話でのお問い合わせ
+                </h3>
+                <div
+                  class="flex items-center text-3xl font-bold text-primary mb-4"
+                >
+                  <div class="w-8 h-8 flex items-center justify-center mr-4">
+                    <i class="ri-phone-line"></i>
+                  </div>
+                  03-6824-6886
+                </div>
+                <p class="text-gray-600 mb-6">受付時間：平日 9:00 - 18:00</p>
+                <div class="space-y-4">
+                  <button
+                    class="w-full bg-primary text-white py-3 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap"
+                  >
+                    無料相談予約
+                  </button>
+                  <button
+                    class="w-full border-2 border-secondary text-secondary py-3 !rounded-button hover:bg-secondary hover:text-white transition-colors whitespace-nowrap"
+                  >
+                    お見積もり依頼
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <form action="https://formspree.io/f/mqalyjel" method="POST" class="bg-white p-8 rounded-xl shadow-sm">
+                <input type="hidden" name="_subject" value="尾形社労士事務所：サービスに関するお問い合わせ" />
+                <input type="hidden" name="_language" value="ja" />
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                  お問い合わせフォーム
+                </h3>
+                <div class="space-y-6">
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-900 mb-2"
+                      >お名前 *</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                      placeholder="山田太郎"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-900 mb-2"
+                      >ご希望のサービス *</label
+                    >
+                    <select
+                      name="service"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-700 hover:border-primary focus:ring-2 focus:ring-primary focus:border-transparent"
+                    >
+                      <option value="">サービスを選択してください</option>
+                      <option value="労働保険・社会保険">労働保険・社会保険</option>
+                      <option value="給与計算">給与計算</option>
+                      <option value="就業規則作成">就業規則作成・改定</option>
+                      <option value="人事労務相談">人事労務相談</option>
+                      <option value="労働契約書作成">労働契約書作成</option>
+                      <option value="労務管理研修">労務管理研修</option>
+                      <option value="その他">その他</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-900 mb-2"
+                      >会社名</label
+                    >
+                    <input
+                      type="text"
+                      name="company"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                      placeholder="株式会社サンプル"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-900 mb-2"
+                      >メールアドレス *</label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                      placeholder="example@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-900 mb-2"
+                      >お問い合わせ内容 *</label
+                    >
+                    <textarea
+                      rows="4"
+                      name="message"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                      placeholder="ご質問やご要望をお聞かせください"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-primary text-white py-4 !rounded-button hover:bg-blue-700 transition-colors text-lg font-semibold whitespace-nowrap"
+                  >
+                    送信する
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-building-line text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">尾形社会保険労務士事務所</h3>
+                <p class="text-gray-400 text-sm">
+                  労働・社会保険のプロフェッショナル
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              企業の人事労務に関するあらゆる課題を解決し、<br />
+              お客様の事業発展をサポートいたします。
+            </p>
+            <div class="flex items-center space-x-2 text-primary">
+              <div class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-phone-line"></i>
+              </div>
+              <span class="font-semibold text-lg">03-6824-6886</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">サービス</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >労働保険・社会保険</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >給与計算</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >就業規則作成</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >人事労務相談</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >労働契約書作成</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">会社情報</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ホーム</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >事務所概要</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >代表挨拶</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >アクセス</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">
+              © 2025 尾形社会保険労務士事務所. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-twitter-line"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-facebook-line"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-linkedin-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="header-scroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) {
+            header.classList.add("nav-fixed");
+          } else {
+            header.classList.remove("nav-fixed");
+          }
+        });
+      });
+    </script>
+
+    <script id="mobile-menu">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+      });
+    </script>
+
+    <script id="service-tabs">
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".service-tab");
+        const contents = document.querySelectorAll(".service-content");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            const targetService = this.getAttribute("data-service");
+
+            tabs.forEach((t) => {
+              t.classList.remove("border-primary", "text-primary", "bg-blue-50");
+              t.classList.add("border-transparent", "text-gray-600");
+            });
+            this.classList.remove("border-transparent", "text-gray-600");
+            this.classList.add("border-primary", "text-primary", "bg-blue-50");
+
+            contents.forEach((content) => {
+              content.classList.add("hidden");
+            });
+            const targetContent = document.getElementById(targetService);
+            if (targetContent) {
+              targetContent.classList.remove("hidden");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script id="accordion">
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordionTriggers = document.querySelectorAll(".accordion-trigger");
+        accordionTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target");
+            const targetContent = document.getElementById(targetId);
+            const icon = this.querySelector(".accordion-icon");
+
+            if (targetContent.classList.contains("active")) {
+              targetContent.classList.remove("active");
+              icon.classList.remove("ri-subtract-line");
+              icon.classList.add("ri-add-line");
+            } else {
+              document.querySelectorAll(".accordion-content").forEach((content) => {
+                content.classList.remove("active");
+              });
+              document.querySelectorAll(".accordion-icon").forEach((i) => {
+                i.classList.remove("ri-subtract-line");
+                i.classList.add("ri-add-line");
+              });
+              targetContent.classList.add("active");
+              icon.classList.remove("ri-add-line");
+              icon.classList.add("ri-subtract-line");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script id="smooth-scroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const offsetTop = targetElement.offsetTop - 80;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
