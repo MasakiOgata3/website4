@@ -39,30 +39,7 @@
         },
       };
     </script>
-    <style>
-      :where([class^="ri-"])::before {
-      content: "\f3c2";
-      }
-      .nav-fixed {
-      backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.95);
-      }
-      .tab-scroll {
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      }
-      .tab-scroll::-webkit-scrollbar {
-      display: none;
-      }
-      .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      }
-      .accordion-content.active {
-      max-height: 500px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-white">
     <header
@@ -1558,106 +1535,7 @@
       </div>
     </footer>
 
-    <script id="header-scroll">
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.getElementById("header");
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 100) {
-            header.classList.add("nav-fixed");
-          } else {
-            header.classList.remove("nav-fixed");
-          }
-        });
-      });
-    </script>
-
-    <script id="mobile-menu">
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        if (mobileMenuBtn && mobileMenu) {
-          mobileMenuBtn.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
-          });
-        }
-      });
-    </script>
-
-    <script id="service-tabs">
-      document.addEventListener("DOMContentLoaded", function () {
-        const tabs = document.querySelectorAll(".service-tab");
-        const contents = document.querySelectorAll(".service-content");
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", function () {
-            const targetService = this.getAttribute("data-service");
-
-            tabs.forEach((t) => {
-              t.classList.remove("border-primary", "text-primary", "bg-blue-50");
-              t.classList.add("border-transparent", "text-gray-600");
-            });
-            this.classList.remove("border-transparent", "text-gray-600");
-            this.classList.add("border-primary", "text-primary", "bg-blue-50");
-
-            contents.forEach((content) => {
-              content.classList.add("hidden");
-            });
-            const targetContent = document.getElementById(targetService);
-            if (targetContent) {
-              targetContent.classList.remove("hidden");
-            }
-          });
-        });
-      });
-    </script>
-
-    <script id="accordion">
-      document.addEventListener("DOMContentLoaded", function () {
-        const accordionTriggers = document.querySelectorAll(".accordion-trigger");
-        accordionTriggers.forEach((trigger) => {
-          trigger.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-target");
-            const targetContent = document.getElementById(targetId);
-            const icon = this.querySelector(".accordion-icon");
-
-            if (targetContent.classList.contains("active")) {
-              targetContent.classList.remove("active");
-              icon.classList.remove("ri-subtract-line");
-              icon.classList.add("ri-add-line");
-            } else {
-              document.querySelectorAll(".accordion-content").forEach((content) => {
-                content.classList.remove("active");
-              });
-              document.querySelectorAll(".accordion-icon").forEach((i) => {
-                i.classList.remove("ri-subtract-line");
-                i.classList.add("ri-add-line");
-              });
-              targetContent.classList.add("active");
-              icon.classList.remove("ri-add-line");
-              icon.classList.add("ri-subtract-line");
-            }
-          });
-        });
-      });
-    </script>
-
-    <script id="smooth-scroll">
-      document.addEventListener("DOMContentLoaded", function () {
-        const links = document.querySelectorAll('a[href^="#"]');
-        links.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              const offsetTop = targetElement.offsetTop - 80;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-      });
-    </script>
+    <!-- メインJavaScript -->
+    <script src="js/main.js"></script>
   </body>
 </html>

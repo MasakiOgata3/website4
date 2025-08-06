@@ -39,21 +39,7 @@
         },
       };
     </script>
-    <style>
-      :where([class^="ri-"])::before {
-          content: "\f3c2";
-      }
-      .hero-bg {
-          background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20office%20interior%20with%20natural%20lighting%2C%20clean%20white%20background%2C%20business%20consultation%20meeting%20room%20with%20documents%20and%20laptop%2C%20soft%20blue%20accents%2C%20minimalist%20design%2C%20corporate%20atmosphere%2C%20depth%20of%20field%2C%20high%20quality%20photography&width=1920&height=800&seq=hero001&orientation=landscape');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-      }
-      .nav-fixed {
-          backdrop-filter: blur(10px);
-          background-color: rgba(255, 255, 255, 0.95);
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-white">
     <!-- ヘッダー -->
@@ -1098,52 +1084,7 @@
       </div>
     </footer>
 
-    <!-- スクリプト -->
-    <script id="header-scroll">
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.getElementById("header");
-
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 100) {
-            header.classList.add("nav-fixed");
-          } else {
-            header.classList.remove("nav-fixed");
-          }
-        });
-      });
-    </script>
-
-    <script id="mobile-menu">
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        mobileMenuBtn.addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
-        });
-      });
-    </script>
-
-    <script id="smooth-scroll">
-      document.addEventListener("DOMContentLoaded", function () {
-        const links = document.querySelectorAll('a[href^="#"]');
-
-        links.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-              const offsetTop = targetElement.offsetTop - 80;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-      });
-    </script>
+    <!-- メインJavaScript -->
+    <script src="js/main.js"></script>
   </body>
 </html>
